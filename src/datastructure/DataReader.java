@@ -20,7 +20,18 @@ public class DataReader {
 
 		String textFile = System.getProperty("user.dir") + "/src/data/self-driving-car.txt";
 
+		File file = new File(textFilePath);
+		BufferedReader br = new BufferedReader(new FileReader(textFilePath));
+		String st;
+//        null
+//        while(st = br.readLine()) !=null)
+//        System.out.println(st);
+//    try{
+//        fis =
+//    }
+	}
 
+}
 
 	}
 

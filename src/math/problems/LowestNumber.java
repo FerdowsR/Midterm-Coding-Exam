@@ -28,7 +28,23 @@ public class LowestNumber {
 		System.out.println("Data is reading from the Table (tbl_primenumber) and displaying to the console");
 		for(String st:lowestValue){
 			System.out.println(st);
+			int temp, size;
+			size = array.length;
+
+			for(int i = 0; i < size; i++ ){
+				for(int j = i+1; j < size; j++){
+					if(array[i] > array[j]){
+						temp = array[i];
+						array[i] = array[j];
+						array[j] = temp;
+					}
+				}
+			}
+			System.out.println("Lowest value of the array is: " + array[0]);
 		}
+	}
+
+
 	}
 
 }
