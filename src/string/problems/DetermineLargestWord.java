@@ -25,14 +25,22 @@ public class DetermineLargestWord {
     public static Map<Integer, String> findTheLargestWord(String wordGiven) {
     }
 
+
     Map<Integer, String> map = new HashMap<Integer, String>();
-    String[] words = str.split(" ");
+
+    {
+        map.put(1, "Human");
+        map.put(2, "brain");
+        map.put(3, "is");
+        map.put(4, "a");
+        map.put(5, "biological");
+        map.put(6, "learning");
+        map.put(7, "machine");
+        System.out.println(map);
+    }
+}
 
 
-        public String[] getTheLargestWords() {
-            return words;
-        }
-    };
 
 
 
