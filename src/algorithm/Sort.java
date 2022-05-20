@@ -1,27 +1,29 @@
 package algorithm;
-
+import java.lang.*;
+import java.util.*;
 import java.util.Arrays;
 
 public class Sort {
 
     long executionTime = 0;
-	/*
-	 * Please implement all the sorting algorithm. Feel free to add helper methods.
-	 * Store all the sorted data into one of the databases.
-	 */
-    public static void printStoreArray(int[]array){
-        for (int i=0; i<array.length; i++){
+
+    /*
+     * Please implement all the sorting algorithm. Feel free to add helper methods.
+     * Store all the sorted data into one of the databases.
+     */
+    public static void printStoreArray(int[] array) {
+        for (int i = 0; i < array.length; i++) {
             System.out.println(array[i]);
         }
     }
 
-    public int[] selectionSort(int [] array){
+    public int[] selectionSort(int[] array) {
         final long startTime = System.currentTimeMillis();
-        int [] list = array;
+        int[] list = array;
 
-        for(int j=0; j<array.length-1; j++){
+        for (int j = 0; j < array.length - 1; j++) {
             int min = j;
-            for(int i=j+1; i<array.length; i++) {
+            for (int i = j + 1; i < array.length; i++) {
                 if (array[i] < array[min])
                     min = i;
             }
@@ -37,21 +39,21 @@ public class Sort {
         return list;
     }
 
-    public int[] insertionSort(int [] array){
+    public int[] insertionSort(int[] array) {
         final long startTime = System.currentTimeMillis();
-        int [] list = array;
+        int[] list = array;
         //implement here
-    int temp;
-    for (int i=1;i<array.length; i++){
-        int j=i;
-        while((j>0) && (array[j] < array[j-1])) {
-            temp=array[j];
-            array[j]=array[j-1];
-            array[j-1]=temp;
-            j--;
+        int temp;
+        for (int i = 1; i < array.length; i++) {
+            int j = i;
+            while ((j > 0) && (array[j] < array[j - 1])) {
+                temp = array[j];
+                array[j] = array[j - 1];
+                array[j - 1] = temp;
+                j--;
 
+            }
         }
-    }
 
 
         final long endTime = System.currentTimeMillis();
@@ -60,34 +62,34 @@ public class Sort {
         return list;
     }
 
-    public int[] bubbleSort(int [] array) {
+    public int[] bubbleSort(int[] array) {
         int[] list = array;
         //implement here
         int n = array.length;
         for (int i = 0; i < n - 1; i++) ;
         int j;
-        for (j = 0; j < n - j - 1; j++);
+        for (j = 0; j < n - j - 1; j++) ;
         if (array[j] > array[j + 1]) {
-            int temp=array[j];
-            array[j]=array[j+1];
-            array[j+1]=temp;
+            int temp = array[j];
+            array[j] = array[j + 1];
+            array[j + 1] = temp;
 
         }
 
 
         return list;
     }
-    
 
-    public int [] mergeSort(int [] array){
-        int [] list = array;
+
+    public int[] mergeSort(int[] array) {
+        int[] list = array;
         //implement here
-        int p,q,r;
-        p=0;
-        q=1;
-        r=10;
-        int n1=q-p+1;
-        int n2 = r-q;
+        int p, q, r;
+        p = 0;
+        q = 1;
+        r = 10;
+        int n1 = q - p + 1;
+        int n2 = r - q;
 
         int L[] = new int[n1];
         int M[] = new int[n2];
@@ -122,25 +124,17 @@ public class Sort {
 
         return list;
     }
-    
-
-    public int [] quickSort(int[] array, int i, int i1) {
-        int[] list = array;
-        //implement here
-        quickSort(array, 0, array.length - 1);
-        //verify sorted array
-        System.out.println(Arrays.toString(array));
 
 
+    public int[] quickSort(int[] array, int i, int i1) {
 
-        
 
         return list;
     }
 
-    
-    public int [] heapSort(int [] array){
-        int [] list = array;
+
+    public int[] heapSort(int[] array) {
+        int[] list = array;
         //implement here
         int n = array.length;
         for (int i = n / 2 - 1; i >= 0; i--)
@@ -149,42 +143,60 @@ public class Sort {
             int temp = array[0];
             array[0] = array[i];
             array[i] = temp;
-            heapify(array, i,0);
+            heapify(array, i, 0);
         }
-        
+
 
         return list;
     }
 
     private void heapify(int[] array, int i, int i1) {
-        int largest=i;
-        int l =2* i+1;
-        int r =2*i+2;
-        if (1<i && array [1] > array [largest]);
-        largest=1;
-        if(r<i && array[1] > array[largest]);
-        largest =r;
-        if(largest !=i){
-            int swap=array[i];
-            array[i]=array[largest];
-            array[largest]=swap;
+        int largest = i;
+        int l = 2 * i + 1;
+        int r = 2 * i + 2;
+        if (1 < i && array[1] > array[largest]) ;
+        largest = 1;
+        if (r < i && array[1] > array[largest]) ;
+        largest = r;
+        if (largest != i) {
+            int swap = array[i];
+            array[i] = array[largest];
+            array[largest] = swap;
             heapify(array, i, i1);
         }
-
     }
 
 
-    public int [] bucketSort(int [] array){
-        int [] list = array;
+    public int[] bucketSort(int[] array) {
+        int[] list = array;
         //implement here
-        
-        
+        public static void Sort ( int a[])
 
-        return list;
+        int n = a.length, i, j, p, temp;
+        for (i = 0; i < n - 1; i++) {
+
+            for (j = 0; j < n - i - 1; j++) {
+                if (a[j + 1] < a[j]) {
+                    temp = a[j + 1];
+                    a[j + 1] = a[j];
+                    a[j] = temp;
+                }
+
+            }
+
+        }
     }
-    
-    public int [] shellSort(int [] array){
-        int [] list = array;
+
+    int[] array;
+
+    {
+
+    }
+
+    {
+    }
+
+    public int[] shellSort(int[] array) {
         //implement here
         int n = array.length;
         for (int gap = n / 2; gap > 0; gap /= 2) {
@@ -198,15 +210,8 @@ public class Sort {
                 array[j] = key;
             }
         }
-        
-        
-
-        return list;
+        return array;
     }
 
-    public static void printSortedArray(int [] array){
-        for(int i=0; i<array.length; i++){
-            System.out.println(array[i]);
-        }
-    }
+
 }
